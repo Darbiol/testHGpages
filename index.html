@@ -1,0 +1,121 @@
+<html>
+<head>
+	<title>Samplebackbone</title>
+<style>
+div{
+	display: block;
+}
+body{
+	background-color: #C8C8C8  ;
+}
+#head{
+	height:50px;
+	width: 1080px;
+	border-bottom: 1px solid black;
+}
+#head h3{
+	margin-left: 450px;
+	margin-top: 15px;
+	font-family: arial;
+}
+#contents{
+	min-height: 100px;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+#addItems{
+	float: left;
+	position: absolute;
+	height: 100px;
+	border-bottom: 1px solid gray
+}
+#addItems table{
+	margin-top: 13px;
+}
+#itemList{
+	float: left;
+	position: relative;
+	height: 200px;
+	margin-top: 100px;
+	border-top: 1px solid gray;
+}
+#itemList table{
+	width: 700px;
+}
+#itemList table tr td{
+	text-align: center;
+}
+#footer{
+	height: 30px;
+	width: 1080px;
+	border-top: 1px solid gray;
+}
+#footer span{
+	margin-left: 850px;
+	margin-top: 8px;
+	font-family: sans-serif;
+}
+</style>		
+</head>
+
+<body>
+<div id="head"><h3>Item Management</h3></div>
+<div id="contents">
+
+	<div id="itemList">
+		<table id="item_table">
+			<thead>
+				<tr>
+					<th></th>
+					<th>Item Name</th>
+					<th>Supplier</th>
+					<th>Quantity</th>
+				</tr>
+			</thead>
+			<tbody id="item_table_contents">
+			<!--	<tr>
+					<td><span>del</span></td>
+					<td>Item Name</td>
+					<td>Supplier</td>
+					<td>Quantity</td>
+				</tr>-->
+			</tbody>
+		</table>
+	</div>
+	<div id="addItems">
+		<table id="add_item_table">
+			<tr>
+				<td>Item Name:</td>
+				<td><input type="text" name="item_name"></td>
+				<td>Quantity</td>
+				<td><input type="text" name="item_quantity"></td>
+			</tr>
+			<tr>
+				<td>Supplier</rd>
+				<td><input type="text" name="item_supplier"></td>
+				<td></td>
+				<td><button id="add_item_butt">ADD!</button></td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div id="footer"><span>ChineseBear Solutions Inc.</span></div>
+
+<script type="text/template" id="item_template">
+		<td><span>del</span></td>
+		<td><%= itemName %></td>
+		<td><%= supplier%></td>
+		<td><%= quantity%></td>
+</script>
+<!--<script type="text/template" id="item_edit_template"></script>-->
+
+
+<script type="text/javascript" src="./bower_components/jquery/jquery.js"></script>
+ <script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+ <script type="text/javascript" src="./bower_components/underscore/underscore.js"></script>
+ <script type="text/javascript" src="./bower_components/backbone/backbone.js"></script>
+ <script type="text/javascript" src="./public/scripts/item.js"></script>
+</body>
+</html>
